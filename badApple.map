@@ -1,0 +1,97 @@
+ROM0 bank #0:
+	SECTION: $0000-$001f ($0020 bytes) ["MemCopy Script"]
+	         $0000 = MemCopy
+	         $0009 = UnpackAdr
+	         $0011 = findAddress
+	         $0016 = findAddress.frameAddressLoop
+	         $001c = findAddress.frameFound
+	SECTION: $0020-$0028 ($0009 bytes) ["Main"]
+	         $0020 = TheEndlessLoopOfSadness
+	EMPTY: $0029-$003f ($0017 bytes)
+	SECTION: $0040-$004c ($000d bytes) ["VBlank Interrupt"]
+	         $0040 = VBlankInterrupt
+	EMPTY: $004d-$004f ($0003 bytes)
+	SECTION: $0050-$00ed ($009e bytes) ["Tile address"]
+	         $0050 = tileAddress
+	         $0050 = bankAddress
+	         $009e = mapAddress
+	EMPTY: $00ee-$00ff ($0012 bytes)
+	SECTION: $0100-$016a ($006b bytes) ["Header"]
+	         $0150 = EntryPoint
+	         $0150 = WaitVBlank
+	EMPTY: $016b-$016f ($0005 bytes)
+	SECTION: $0170-$21c7 ($2058 bytes) ["Tilemap data"]
+	         $0170 = Tilemap.frame1
+	         $0170 = Tilemap
+	         $02d8 = Tilemap.frame19
+	         $0440 = Tilemap.frame20
+	         $05a8 = Tilemap.frame21
+	         $0710 = Tilemap.frame22
+	         $0878 = Tilemap.frame23
+	         $09e0 = Tilemap.frame24
+	         $0b48 = Tilemap.frame25
+	         $0cb0 = Tilemap.frame26
+	         $0e18 = Tilemap.frame27
+	         $0f80 = Tilemap.frame28
+	         $10e8 = Tilemap.frame29
+	         $1250 = Tilemap.frame30
+	         $13b8 = Tilemap.frame31
+	         $1520 = Tilemap.frame32
+	         $1688 = Tilemap.frame33
+	         $17f0 = Tilemap.frame34
+	         $1958 = Tilemap.frame35
+	         $1ac0 = Tilemap.frame36
+	         $1c28 = Tilemap.frame37
+	         $1d90 = Tilemap.frame38
+	         $1ef8 = Tilemap.frame39
+	         $2060 = Tilemap.frame40
+	SECTION: $21c8-$2227 ($0060 bytes) ["Draw"]
+	         $21c8 = IncrementCheck
+	         $21da = IncrementCheck.exit
+	         $21db = UpdateScreen
+	         $21ed = UpdateScreen.tileCopy
+	         $21f8 = UpdateScreen.returnPoint
+	         $220a = UpdateScreen.mapCopy
+	         $220c = UpdateScreen.rowLoop
+	EMPTY: $2228-$3fff ($1dd8 bytes)
+	TOTAL EMPTY: $1e09 bytes
+
+ROMX bank #1:
+	SECTION: $4000-$7e0f ($3e10 bytes) ["Tile data"]
+	         $4000 = Tiles.frame1
+	         $4000 = Tiles
+	         $4010 = Tiles.frame19
+	         $4190 = Tiles.frame20
+	         $4350 = Tiles.frame21
+	         $4570 = Tiles.frame22
+	         $4710 = Tiles.frame23
+	         $48e0 = Tiles.frame24
+	         $4ab0 = Tiles.frame25
+	         $4d60 = Tiles.frame26
+	         $50a0 = Tiles.frame27
+	         $5400 = Tiles.frame28
+	         $5750 = Tiles.frame29
+	         $5ab0 = Tiles.frame30
+	         $5e10 = Tiles.frame31
+	         $6160 = Tiles.frame32
+	         $64b0 = Tiles.frame33
+	         $6820 = Tiles.frame34
+	         $6c10 = Tiles.frame35
+	         $6ff0 = Tiles.frame36
+	         $7360 = Tiles.frame37
+	         $7720 = Tiles.frame38
+	         $7ac0 = Tiles.frame39
+	EMPTY: $7e10-$7fff ($01f0 bytes)
+	TOTAL EMPTY: $01f0 bytes
+
+HRAM bank #0:
+	SECTION: $ff80-$ff81 ($0002 bytes) ["Variables"]
+	         $ff80 = frameCounter
+	         $ff81 = currentFrame
+	EMPTY: $ff82-$fffe ($007d bytes)
+	TOTAL EMPTY: $007d bytes
+
+SUMMARY:
+	ROM0: 8695 bytes used / 7689 free
+	ROMX: 15888 bytes used / 496 free in 1 bank
+	HRAM: 2 bytes used / 125 free
